@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Envelope + Letter (Open/Close on Click)</title>
+    <link rel="stylesheet" href="./style.css">
+   
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <audio id="myAudio" src="music/Say-You-Love-Me.mp3" loop></audio>
+                    <div class="text">
+                        <strong>Alejandra</strong>
+                        <p>
+                            Will you be my Valentine?
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const audio = document.getElementById('myAudio');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap')
+            envelope.classList.toggle('myAudio');
+
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+            }
+        });
+        
+    </script>
+</body>
+</html>
